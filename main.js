@@ -8,13 +8,21 @@ let posicaoX = 180;
 let posicaoY = 180;
 
 document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowUp" && posicaoY > 0) posicaoY -= step;
-    if (event.key === "ArrowDown" && posicaoY < 360) posicaoY += step;
-    if (event.key === "ArrowLeft" && posicaoX > 0) posicaoX -= step;
-    if (event.key === "ArrowRight" && posicaoX < 360) posicaoX += step;
+    if (gameover) return;
+    let newX= posicaoX;
+    let newY= posicaoY;
+    if (event.key === "ArrowUp" && posicaoY > 0) newY -= step;
+    if (event.key === "ArrowDown" && posicaoY < 360) newY += step;
+    if (event.key === "ArrowLeft" && posicaoX > 0) newX -= step;
+    if (event.key === "ArrowRight" && posicaoX < 360) newX += step;
+    if (!checkCollision (newX, newY)) {
+        posicaoX = newX;
+        posicaoY = newY;
+        player.style.top = posicaoY + "px";
+        player.style.left = posicaoX + "px";
+    }
 
-    player.style.top = posicaoY + "px";
-     player.style.left = posicaoX + "px";
+checkWin ()
 
 
 })
@@ -42,6 +50,8 @@ function checkWin () {
         gameover = true;
     } 
 }
+
+
 
 
 
