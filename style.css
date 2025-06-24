@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgray;
+    overflow: hidden;
+
+}
+
+#gamearea {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: darkgray;
+    border: 2px solid black;
+
+}
+
+.player, .goal, .obstaculo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+
+}
+
+.player {
+    background-image: url("bola.png");
+    background-size: cover;
+    top: 180px;
+    left: 180px;
+    
+
+}
+
+.goal {
+    background-color: indigo;
+    top: 50px;
+    left: 300px;
+
+}
+
+
+
+.obstaculo1 {
+    background-color:blue;
+    top: 100px;
+    left: 100px;
+
+}
+
+.obstaculo2 {
+    background-color: darkred;
+    top: 200px;
+    left: 250px;
+    
+} 
+
+.obstaculo3 {
+    background-color: darkorchid;
+    top: 300px;
+    left: 150px;
+    
+}
+
